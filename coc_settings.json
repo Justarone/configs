@@ -1,0 +1,14 @@
+{
+  "html.enable": true,
+  "python.jediEnabled": false,
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  },
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true
+}
