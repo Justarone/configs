@@ -45,6 +45,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdcommenter'
 "here is plugin with many different themes (can find on github)
 Plug 'rafi/awesome-vim-colorschemes'
+" css color show (activate: ColorHighlight)
+Plug 'chrisbra/Colorizer'
 " prettier for vim! post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -68,11 +70,11 @@ set shiftwidth=4
 syntax on
 
 "theme for tabs and panel
-let g:airline_theme='deus' "'tender', luna
+let g:airline_theme='luna' "'tender', luna, deus
 let g:airline#extensions#tabline#enabled = 1
 
 "theme for whole vim
-colorscheme onedark "gruvbox, onedark, hybrid, dracula 
+colorscheme onedark "gruvbox, onedark, hybrid, dracula, nord, purify, afterglow, tender, alduin 
 set background=dark
 "resetting background must be after colorscheme configuration
 highlight Normal ctermbg=NONE guibg=NONE
@@ -94,7 +96,7 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 "CONFIGURATION FOR COC
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-snippets', 'coc-emmet', 'coc-json', 'coc-python', 'coc-highlight', 'coc-html', 'coc-css']
+let g:coc_global_extensions = ['coc-clangd', 'coc-snippets', 'coc-emmet', 'coc-json', 'coc-python', 'coc-highlight', 'coc-html', 'coc-css', 'coc-texlab']
 "coc.preferences.jumpCommand": "drop"
 
 " if hidden is not set, TextEdit might fail.

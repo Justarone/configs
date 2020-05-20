@@ -60,11 +60,12 @@ exec --no-startup-id pulseaudio
 bindsym $mod+Ctrl+b exec i3-sensible-terminal -e 'bmenu'
 bindsym $mod+F2 exec chromium
 bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
+ #bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec i3-sensible-terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+Shift+t exec --no-startup-id xcompmgr
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym --release Shift+Print exec --no-startup-id i3-scrot -s
@@ -279,7 +280,8 @@ mode "resize" {
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nitrogen --restore; sleep 1; # compton -b # doesn't work after udpates
+exec --no-startup-id xcompmgr # subs compton
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
@@ -295,6 +297,7 @@ exec_always --no-startup-id fix_xcursor
 
 # My own configuration:
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:shifts_toggle
+#exec --no-startup-id set -o vi
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -329,30 +332,44 @@ set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	i3bar_command i3bar
-	status_command i3status
-	position bottom
+    i3bar_command i3bar
+    status_command i3status
+    position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
+#    tray_output primary
+#    tray_output eDP1
 
-	bindsym button4 nop
-	bindsym button5 nop
+    bindsym button4 nop
+    bindsym button5 nop
    #font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
+    strip_workspace_numbers yes
 
     colors {
-        background #261935
-        statusline #FDECE4
+# ================== PURPLE_WARRIOR_COLORS ========================
+        #background #261935
+        #statusline #FDECE4
+        #separator  #FFFFFF
+
+#                      border  backgr. text
+        #focused_workspace  #A5414B #FDECE4 #A5414B
+        #active_workspace   #595B5B #A5414B #FDECE4
+        #inactive_workspace #595B5B #A5414B #FDECE4
+        #binding_mode       #16a085 #2C2C2C #F9FAF9
+        #urgent_workspace   #16a085 #FDF6E3 #E5201D
+# ================== PURPLE_WARRIOR_COLORS ========================
+# ==================  GREEN_TOURIST_COLORS ========================
+        background #0F1E25
+        statusline #C8E690
         separator  #FFFFFF
 
 #                      border  backgr. text
-        focused_workspace  #A5414B #FDECE4 #A5414B
-        active_workspace   #595B5B #A5414B #FDECE4
-        inactive_workspace #595B5B #A5414B #FDECE4
+        focused_workspace  #14473E #C8E690 #14473E
+        active_workspace   #595B5B #14473E #C8E690
+        inactive_workspace #595B5B #14473E #C8E690
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
+# ==================  GREEN_TOURIST_COLORS ========================
     }
 }
 
@@ -425,3 +442,92 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+
+set $mod2 Mod4
+
+mode "mouse" {
+
+    # set your three speeds here
+
+    set $slow 20
+    set $quick 5
+    set $fast 50
+
+    # Mouse movement (slow/fine-tuned) -- vim keybindings
+
+    bindsym h exec xdotool mousemove_relative -- -$slow 0
+    bindsym j exec xdotool mousemove_relative 0 $slow
+    bindsym k exec xdotool mousemove_relative -- 0 -$slow
+    bindsym l exec xdotool mousemove_relative $slow 0
+
+    # Mouse movement (slow/fine-tuned) -- arrow keys
+
+    bindsym Left exec xdotool mousemove_relative -- -$slow 0
+    bindsym Down exec xdotool mousemove_relative 0 $slow
+    bindsym Up exec xdotool mousemove_relative -- 0 -$slow
+    bindsym Right exec xdotool mousemove_relative $slow 0
+
+    # Mouse movement (quicker) -- vim keybindings
+
+    bindsym Shift+h exec xdotool mousemove_relative -- -$quick 0
+    bindsym Shift+j exec xdotool mousemove_relative 0 $quick
+    bindsym Shift+k exec xdotool mousemove_relative -- 0 -$quick
+    bindsym Shift+l exec xdotool mousemove_relative $quick 0
+
+    # Mouse movement (quicker) -- arrow keys
+
+    bindsym Shift+Left exec xdotool mousemove_relative -- -$quick 0
+    bindsym Shift+Down exec xdotool mousemove_relative 0 $quick
+    bindsym Shift+Up exec xdotool mousemove_relative -- 0 -$quick
+    bindsym Shift+Right exec xdotool mousemove_relative $quick 0
+
+    # Mouse movement (fast) -- vim keybindings
+
+    #bindsym Shift+$mod2+h exec xdotool mousemove_relative -- -$fast 0
+    #bindsym Shift+$mod2+j exec xdotool mousemove_relative 0 $fast
+    #bindsym Shift+$mod2+k exec xdotool mousemove_relative -- 0 -$fast
+    #bindsym Shift+$mod2+l exec xdotool mousemove_relative $fast 0
+
+    # Mouse movement (fast) -- arrow keys
+
+    #bindsym Shift+$mod2+Left exec xdotool mousemove_relative -- -$fast 0
+    #bindsym Shift+$mod2+Down exec xdotool mousemove_relative 0 $fast
+    #bindsym Shift+$mod2+Up exec xdotool mousemove_relative -- 0 -$fast
+    #bindsym Shift+$mod2+Right exec xdotool mousemove_relative $fast 0
+
+    # Left Click
+    bindsym f exec xdotool click 1
+
+    # Middle Click
+    bindsym d exec xdotool click 2
+
+    # Right Click
+    bindsym s exec xdotool click 3
+
+    # Left Click-and-drag
+    bindsym Shift+f exec xdotool mousedown 1
+
+    # Middle Click-and-drag 
+    bindsym Shift+d exec xdotool mousedown 2
+
+    # Right Click-and-drag
+    bindsym Shift+s exec xdotool mousedown 3
+
+    # Left Drag release
+    bindsym Ctrl+f exec xdotool mouseup 1
+
+    # Middle Drag release
+    bindsym Ctrl+d exec xdotool mouseup 2
+
+    # Right Drag release
+    bindsym Ctrl+s exec xdotool mouseup 3
+
+
+    # return to normal keybindings -- IMPORTANT!!
+
+    bindsym Escape mode "default"
+}
+
+bindsym $mod2+m mode "mouse"
+
