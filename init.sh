@@ -52,3 +52,8 @@ sudo pacman -S bash-language-server
 # external monitor
 # arandr - program to configure setup for more than 1 monitor
 # save layout - generates .sh script which will use right configuration of xrandr
+
+
+# bluetooth
+# sudo pacman -S blueberry # helps to manage devices (works better than blueman on i3)
+# turn off/on bluetooth (software): `sudo bluetooth on`
