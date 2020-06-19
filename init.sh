@@ -33,3 +33,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 #install powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/freespace/third_party/powerlevel10k
 echo "source ~/freespace/third_party/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+
+# pip3 install jedi # for coc.nvim python but it's better to do next line:
+# update coc-settings.json to use mpls
+
+sudo pacman -S bash-language-server
+
+# hdd routine
+# sudo lsblk  -  check disks list
+# (format disk in gparted or use: `sudo mkfs.ext4 /dev/sda`)
+# sudo mkdir /home/justarone/hdd
+# sudo mount /dev/sda /home/justarone/hdd  -  one time mount (lost on reboot)
+# sudo blkid  -  find uuid of the disk
+# add to /etc/fstab:
+# UUID=8c056b07-58a0-4488-b809-8feb2a6c8c94 /home/justarone/hdd ext4 defaults,noatime,discard 0 2 (it's example)
