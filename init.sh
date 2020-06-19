@@ -47,3 +47,8 @@ sudo pacman -S bash-language-server
 # sudo blkid  -  find uuid of the disk
 # add to /etc/fstab:
 # UUID=8c056b07-58a0-4488-b809-8feb2a6c8c94 /home/justarone/hdd ext4 defaults,noatime,discard 0 2 (it's example)
+
+
+# external monitor
+# arandr - program to configure setup for more than 1 monitor
+# save layout - generates .sh script which will use right configuration of xrandr
