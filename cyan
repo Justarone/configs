@@ -1,0 +1,57 @@
+conky.config = {
+	alignment = 'top_right',
+	background = true,
+	color2 = '777777',
+	cpu_avg_samples = 2,
+	default_color = 'FFFFFF',
+	double_buffer = true,
+	font = 'Bitstream Vera Sans:size=10',
+	gap_x = 25,
+	gap_y = 13,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 1.0,
+	use_xft = true,
+}
+conky.text = [[
+${color #d1d1d1}SYSTEM INFORMATION $hr${color}
+Host:$alignr$nodename
+Kernel:$alignr$kernel
+Uptime:$alignr$uptime
+RAM:$alignr$memperc% / $mem
+Swap usage:$alignr$swap/$swapmax
+${color #d1d1d1}CPU $hr${color}
+CPU Frequency:$alignr$freq_g
+CPU usage:$alignr${cpu cpu0}%
+$cpugraph
+$cpubar
+${color #d1d1d1}HDD $hr${color}
+Filesystem Space Left:
+/$alignr${fs_used /}/${fs_size /}
+$fs_bar
+
+HDD: $alignr${fs_used /home/justarone/hdd}/${fs_size /home/justarone/hdd}
+${fs_bar /home/justarone/hdd}
+Temperature:$alignr${execi 2 sensors | grep temp2 | cut -c 15-18 | tail -1}
+#${execigraph 2 -t sensors | grep temp2 | cut -c 15-16 | tail -1}
+${color #d1d1d1}MEMORY$hr${color}
+Memory Usage:$alignr$mem / $memfree
+$memgraph
+${color #d1d1d1}TOP PROCESSES $hr${color}
+${top name 1}$alignr${top cpu 1}%
+${top name 2}$alignr${top cpu 2}%
+${top name 3}$alignr${top cpu 3}%
+${top name 4}$alignr${top cpu 4}%
+${top name 5}$alignr${top cpu 5}%
+---
+${top_io name 1}$alignr${top_io io_perc 1}%
+${top_io name 2}$alignr${top_io io_perc 2}%
+${top_io name 3}$alignr${top_io io_perc 3}%
+---
+${top_mem name 1}$alignr${top_mem mem 1}%
+${top_mem name 2}$alignr${top_mem mem 2}%
+${top_mem name 3}$alignr${top_mem mem 3}%
+]]

@@ -57,3 +57,8 @@ sudo pacman -S bash-language-server
 # bluetooth
 # sudo pacman -S blueberry # helps to manage devices (works better than blueman on i3)
 # turn off/on bluetooth (software): `sudo bluetooth on`
+
+
+# conky custom:
+# create symblink in /usr/share/conky/cyan on config
+# create script start_conky_cyan (look on start_conky_green like on example) and chmod it
