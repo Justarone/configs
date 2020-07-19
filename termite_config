@@ -54,18 +54,20 @@ foreground_bold = #ffffff
 #background = #3f3f3f
 
 # 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.95)
+#background = rgba(63, 63, 63, 1.00) // default termite color
+#background = rgba(38, 38, 38, 1.00) // onedark vim color
+#background = rgba(34, 34, 34, 1.00)  ======> grey_linux
 #background = rgba(38, 25, 54, 0.95) ======> purple_warrior
 #background = rgba(15, 30, 37, 0.85) ======> green_tourist
-background = rgba(15, 30, 37, 0.95)
+background = rgba(34, 34, 34, 0.98)
 
 # If unset, will reverse foreground and background
 highlight = #2f2f2f
 
 # Colors from color0 to color254 can be set
 # Black
-color0=   #000000
-color8=   #555753
+color0=#000000
+color8=#555753
 
 # Red
 color1=#cc0000

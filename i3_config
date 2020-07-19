@@ -3,6 +3,7 @@
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod1
+set $mod2 Mod4
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -155,6 +156,17 @@ set $ws7 7
 set $ws8 8
 set $ws9 9
 
+set $ws10 10
+set $ws11 11
+set $ws12 12
+set $ws13 13
+set $ws14 14
+set $ws15 15
+set $ws16 16
+set $ws17 17
+set $ws18 18
+set $ws19 19
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -165,6 +177,17 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
+
+bindsym $mod2+0 workspace $ws10
+bindsym $mod2+1 workspace $ws11
+bindsym $mod2+2 workspace $ws12
+bindsym $mod2+3 workspace $ws13
+bindsym $mod2+4 workspace $ws14
+bindsym $mod2+5 workspace $ws15
+bindsym $mod2+6 workspace $ws16
+bindsym $mod2+7 workspace $ws17
+bindsym $mod2+8 workspace $ws18
+bindsym $mod2+9 workspace $ws19
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -177,6 +200,17 @@ bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9
 
+bindsym $mod2+Ctrl+0 move container to workspace $ws10
+bindsym $mod2+Ctrl+1 move container to workspace $ws11
+bindsym $mod2+Ctrl+2 move container to workspace $ws12
+bindsym $mod2+Ctrl+3 move container to workspace $ws13
+bindsym $mod2+Ctrl+4 move container to workspace $ws14
+bindsym $mod2+Ctrl+5 move container to workspace $ws15
+bindsym $mod2+Ctrl+6 move container to workspace $ws16
+bindsym $mod2+Ctrl+7 move container to workspace $ws17
+bindsym $mod2+Ctrl+8 move container to workspace $ws18
+bindsym $mod2+Ctrl+9 move container to workspace $ws19
+
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
@@ -187,6 +221,17 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+
+bindsym $mod2+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $mod2+Shift+1 move container to workspace $ws11; workspace $ws11
+bindsym $mod2+Shift+2 move container to workspace $ws12; workspace $ws12
+bindsym $mod2+Shift+3 move container to workspace $ws13; workspace $ws13
+bindsym $mod2+Shift+4 move container to workspace $ws14; workspace $ws14
+bindsym $mod2+Shift+5 move container to workspace $ws15; workspace $ws15
+bindsym $mod2+Shift+6 move container to workspace $ws16; workspace $ws16
+bindsym $mod2+Shift+7 move container to workspace $ws17; workspace $ws17
+bindsym $mod2+Shift+8 move container to workspace $ws18; workspace $ws18
+bindsym $mod2+Shift+9 move container to workspace $ws19; workspace $ws19
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -287,17 +332,18 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-exec --no-startup-id blueman-applet
+#exec --no-startup-id blueman-applet
 exec_always --no-startup-id sbxkb
+#exec --no-startup-id start_conky_cyan
 #exec --no-startup-id start_conky_maia
 #exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 30 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 # My own configuration:
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:shifts_toggle
-#exec --no-startup-id set -o vi
+exec --no-startup-id set -o vi
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -359,17 +405,29 @@ bar {
         #urgent_workspace   #16a085 #FDF6E3 #E5201D
 # ================== PURPLE_WARRIOR_COLORS ========================
 # ==================  GREEN_TOURIST_COLORS ========================
-        background #0F1E25
-        statusline #C8E690
+        #background #0F1E25
+        #statusline #C8E690
+        #separator  #FFFFFF
+
+#                      border  backgr. text
+        #focused_workspace  #14473E #C8E690 #14473E
+        #active_workspace   #595B5B #14473E #C8E690
+        #inactive_workspace #595B5B #14473E #C8E690
+        #binding_mode       #16a085 #2C2C2C #F9FAF9
+        #urgent_workspace   #16a085 #FDF6E3 #E5201D
+# ==================  GREEN_TOURIST_COLORS ========================
+# ==================    GREY_LINUX_COLORS  ========================
+        background #222222
+        statusline #DDDDDD
         separator  #FFFFFF
 
 #                      border  backgr. text
-        focused_workspace  #14473E #C8E690 #14473E
-        active_workspace   #595B5B #14473E #C8E690
-        inactive_workspace #595B5B #14473E #C8E690
+        focused_workspace  #000000 #FFFFFF #222222
+        active_workspace   #FFFFFF #222222 #FFFFFF
+        inactive_workspace #FFFFFF #222222 #FFFFFF
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
-# ==================  GREEN_TOURIST_COLORS ========================
+# ==================    GREY_LINUX_COLORS  ========================
     }
 }
 
@@ -444,57 +502,21 @@ mode "$mode_gaps_outer" {
 }
 
 
-set $mod2 Mod4
 
 mode "mouse" {
 
-    # set your three speeds here
-
     set $slow 20
-    set $quick 5
-    set $fast 50
-
-    # Mouse movement (slow/fine-tuned) -- vim keybindings
+    set $quick 150
 
     bindsym h exec xdotool mousemove_relative -- -$slow 0
     bindsym j exec xdotool mousemove_relative 0 $slow
     bindsym k exec xdotool mousemove_relative -- 0 -$slow
     bindsym l exec xdotool mousemove_relative $slow 0
 
-    # Mouse movement (slow/fine-tuned) -- arrow keys
-
-    bindsym Left exec xdotool mousemove_relative -- -$slow 0
-    bindsym Down exec xdotool mousemove_relative 0 $slow
-    bindsym Up exec xdotool mousemove_relative -- 0 -$slow
-    bindsym Right exec xdotool mousemove_relative $slow 0
-
-    # Mouse movement (quicker) -- vim keybindings
-
     bindsym Shift+h exec xdotool mousemove_relative -- -$quick 0
     bindsym Shift+j exec xdotool mousemove_relative 0 $quick
     bindsym Shift+k exec xdotool mousemove_relative -- 0 -$quick
     bindsym Shift+l exec xdotool mousemove_relative $quick 0
-
-    # Mouse movement (quicker) -- arrow keys
-
-    bindsym Shift+Left exec xdotool mousemove_relative -- -$quick 0
-    bindsym Shift+Down exec xdotool mousemove_relative 0 $quick
-    bindsym Shift+Up exec xdotool mousemove_relative -- 0 -$quick
-    bindsym Shift+Right exec xdotool mousemove_relative $quick 0
-
-    # Mouse movement (fast) -- vim keybindings
-
-    #bindsym Shift+$mod2+h exec xdotool mousemove_relative -- -$fast 0
-    #bindsym Shift+$mod2+j exec xdotool mousemove_relative 0 $fast
-    #bindsym Shift+$mod2+k exec xdotool mousemove_relative -- 0 -$fast
-    #bindsym Shift+$mod2+l exec xdotool mousemove_relative $fast 0
-
-    # Mouse movement (fast) -- arrow keys
-
-    #bindsym Shift+$mod2+Left exec xdotool mousemove_relative -- -$fast 0
-    #bindsym Shift+$mod2+Down exec xdotool mousemove_relative 0 $fast
-    #bindsym Shift+$mod2+Up exec xdotool mousemove_relative -- 0 -$fast
-    #bindsym Shift+$mod2+Right exec xdotool mousemove_relative $fast 0
 
     # Left Click
     bindsym f exec xdotool click 1
@@ -523,8 +545,6 @@ mode "mouse" {
     # Right Drag release
     bindsym Ctrl+s exec xdotool mouseup 3
 
-
-    # return to normal keybindings -- IMPORTANT!!
 
     bindsym Escape mode "default"
 }

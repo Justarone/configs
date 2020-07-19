@@ -27,8 +27,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 "multifile project
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-"colourful names (?)
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "icons for nerdtree (became very heavy in one moment, be carefull with that
 "one...)
 "Plug 'ryanoasis/vim-devicons'
@@ -37,9 +35,9 @@ Plug 'jiangmiao/auto-pairs'
 "plugin for autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "autocomplete python
-"Plug 'davidhalter/jedi-vim' (works good, but very heavy plug....)
+"Plug 'davidhalter/jedi-vim' " (works good, but very heavy plug....)
 "finder of the file in the project (ctrl + p and the name of the file)
-"Plug 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 "Just hit "\cm" (i = individual, m - minimal, check repo for info)
 "to leave a comment (also works in visual mode)
 Plug 'scrooloose/nerdcommenter'
@@ -74,7 +72,7 @@ let g:airline_theme='luna' "'tender', luna, deus
 let g:airline#extensions#tabline#enabled = 1
 
 "theme for whole vim
-colorscheme onedark "gruvbox, onedark, hybrid, dracula, nord, purify, afterglow, tender, alduin 
+colorscheme onedark "gruvbox, onedark, hybrid, dracula, nord
 set background=dark
 "resetting background must be after colorscheme configuration
 highlight Normal ctermbg=NONE guibg=NONE
@@ -96,7 +94,7 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 "CONFIGURATION FOR COC
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-snippets', 'coc-emmet', 'coc-json', 'coc-python', 'coc-highlight', 'coc-html', 'coc-css', 'coc-texlab']
+let g:coc_global_extensions = ['coc-clangd', 'coc-snippets', 'coc-emmet', 'coc-json', 'coc-python', 'coc-highlight', 'coc-html', 'coc-css', 'coc-texlab', 'coc-tsserver']
 "coc.preferences.jumpCommand": "drop"
 
 " if hidden is not set, TextEdit might fail.
