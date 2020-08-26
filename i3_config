@@ -430,13 +430,13 @@ bar {
 # ==================    GREY_LINUX_COLORS  ========================
 # ==================  DARKBLUE_GREEN_AND_PINK  ====================
         background #040410
-        statusline #22AA22
+        statusline #A3FF8C
         separator  #FF22FF
 
 #                      border  backgr. text
-        focused_workspace  #000000 #33CC33 #040410
-        active_workspace   #AA22AA #040410 #FFFFFF
-        inactive_workspace #AA22AA #040410 #FFFFFF
+        focused_workspace  #000000 #A3FF8C #040410
+        active_workspace   #FF22FF #040410 #FFFFFF
+        inactive_workspace #FF22FF #040410 #FFFFFF
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
 # ==================  DARKBLUE_GREEN_AND_PINK  ====================
@@ -448,13 +448,14 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+  client.focused          #991199 #040410 #A3FF8C #000000 #991199
+  client.focused_inactive #000000 #040410 #999999 #000000 #000000
+  client.unfocused        #000000 #040410 #000000 #000000 #000000
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.placeholder      #000000 #0c0c0c #ffffff #000000
 
   client.background       #2B2C2B
+
 
 #############################
 ### settings for i3-gaps: ###

@@ -68,8 +68,11 @@ sudo pacman -S bash-language-server
 
 
 # to change system theme chnage .gtkrc-2.0 in user's dir and /root/
+# PS: THIS ALSO CAN BE CHANGED VIA LXAPPEARANCE! (start from user and from root and everything would be cool)
 # doesn't wanna work everywhere still don't know why
 # cool themes from:
 # https://github.com/daniruiz/flat-remix-gtk.git - theme
 # https://github.com/daniruiz/flat-remix - icons
 
+
+# change color of gaps - in i3 config
