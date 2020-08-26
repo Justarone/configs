@@ -68,7 +68,7 @@ set shiftwidth=4
 syntax on
 
 "theme for tabs and panel
-let g:airline_theme='luna' "'tender', luna, deus
+let g:airline_theme='tender' "'tender', luna, deus
 let g:airline#extensions#tabline#enabled = 1
 
 "theme for whole vim
@@ -78,6 +78,7 @@ set background=dark
 highlight Normal ctermbg=NONE guibg=NONE
 set is
 set hls
+set ignorecase
 "need this to show tabs if they exists
 set list
 set listchars=tab:>-
@@ -94,7 +95,7 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 "CONFIGURATION FOR COC
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-snippets', 'coc-emmet', 'coc-json', 'coc-python', 'coc-highlight', 'coc-html', 'coc-css', 'coc-texlab', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-clangd', 'coc-snippets', 'coc-emmet', 'coc-json', 'coc-python', 'coc-highlight', 'coc-html', 'coc-css', 'coc-texlab', 'coc-tsserver', 'coc-rls']
 "coc.preferences.jumpCommand": "drop"
 
 " if hidden is not set, TextEdit might fail.

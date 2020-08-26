@@ -9,7 +9,7 @@ set $mod2 Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window none
+new_window 1pixel #none
 new_float normal
 
 # Hide borders
@@ -47,7 +47,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 
 exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec i3-sensible-terminal -e 'alsamixer'
-exec --no-startup-id pulseaudio
+#exec --no-startup-id pulseaudio # SEEMS LIKE INPUT WORKS BETTER
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
 
@@ -417,17 +417,29 @@ bar {
         #urgent_workspace   #16a085 #FDF6E3 #E5201D
 # ==================  GREEN_TOURIST_COLORS ========================
 # ==================    GREY_LINUX_COLORS  ========================
-        background #222222
-        statusline #DDDDDD
-        separator  #FFFFFF
+        #background #222222
+        #statusline #DDDDDD
+        #separator  #FFFFFF
 
 #                      border  backgr. text
-        focused_workspace  #000000 #FFFFFF #222222
-        active_workspace   #FFFFFF #222222 #FFFFFF
-        inactive_workspace #FFFFFF #222222 #FFFFFF
+        #focused_workspace  #000000 #FFFFFF #222222
+        #active_workspace   #FFFFFF #222222 #FFFFFF
+        #inactive_workspace #FFFFFF #222222 #FFFFFF
+        #binding_mode       #16a085 #2C2C2C #F9FAF9
+        #urgent_workspace   #16a085 #FDF6E3 #E5201D
+# ==================    GREY_LINUX_COLORS  ========================
+# ==================  DARKBLUE_GREEN_AND_PINK  ====================
+        background #040410
+        statusline #22AA22
+        separator  #FF22FF
+
+#                      border  backgr. text
+        focused_workspace  #000000 #33CC33 #040410
+        active_workspace   #AA22AA #040410 #FFFFFF
+        inactive_workspace #AA22AA #040410 #FFFFFF
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
-# ==================    GREY_LINUX_COLORS  ========================
+# ==================  DARKBLUE_GREEN_AND_PINK  ====================
     }
 }
 

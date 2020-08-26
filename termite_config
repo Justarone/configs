@@ -7,8 +7,11 @@
 #clickable_url = true
 #dynamic_title = true
 #font = TerminessTTFNerdFontMono 12
-#font = Source Code Pro, Medium 12
+#font = PT Mono 11
 font = Monospace 10 
+# vscode font 
+#font = Droid sans Mono 10 
+
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
@@ -56,13 +59,14 @@ foreground_bold = #ffffff
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 1.00) // default termite color
 #background = rgba(38, 38, 38, 1.00) // onedark vim color
-#background = rgba(34, 34, 34, 1.00)  ======> grey_linux
-#background = rgba(38, 25, 54, 0.95) ======> purple_warrior
+#background = rgba(34, 34, 34, 0.98) ======> grey_linux
 #background = rgba(15, 30, 37, 0.85) ======> green_tourist
-background = rgba(34, 34, 34, 0.98)
+#background = rgba(38, 25, 54, 0.95) ======> purple_warrior
+#background = rgba(24, 23, 32, 0.97) ======> darkblue_green_and_pink
+background = rgba(24, 23, 32, 0.95)
 
 # If unset, will reverse foreground and background
-highlight = #2f2f2f
+#highlight = #2f2f2f
 
 # Colors from color0 to color254 can be set
 # Black

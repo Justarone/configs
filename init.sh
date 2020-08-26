@@ -62,3 +62,14 @@ sudo pacman -S bash-language-server
 # conky custom:
 # create symblink in /usr/share/conky/cyan on config
 # create script start_conky_cyan (look on start_conky_green like on example) and chmod it
+
+
+# change login screen and etc. in `lightdm-settings`
+
+
+# to change system theme chnage .gtkrc-2.0 in user's dir and /root/
+# doesn't wanna work everywhere still don't know why
+# cool themes from:
+# https://github.com/daniruiz/flat-remix-gtk.git - theme
+# https://github.com/daniruiz/flat-remix - icons
+
