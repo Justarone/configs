@@ -1,3 +1,6 @@
+# This is cpp makefile for gtkmm project but gtkmm flags can easily be removed and this file will satisfy usual 
+# project on c/c++ (with include/src structure; here may be some issues with headers, it doesn't cpp when
+# headers are changed as you can see)
 CC = g++
 INCLUDE_DIR = include/
 BINARIES = $(patsubst src/%.cpp,bin/%.o, $(wildcard src/*.cpp))

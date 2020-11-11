@@ -430,13 +430,14 @@ bar {
 # ==================    GREY_LINUX_COLORS  ========================
 # ==================  DARKBLUE_GREEN_AND_PINK  ====================
         background #040410
+# PINK: #FF22FF 
         statusline #A3FF8C
-        separator  #FF22FF
+        separator  #A3FF8C
 
 #                      border  backgr. text
-        focused_workspace  #000000 #A3FF8C #040410
-        active_workspace   #FF22FF #040410 #FFFFFF
-        inactive_workspace #FF22FF #040410 #FFFFFF
+        focused_workspace  #040410 #A3FF8C #040410
+        active_workspace   #A3FF8C #040410 #A3FF8C
+        inactive_workspace #A3FF8C #040410 #A3FF8C
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
 # ==================  DARKBLUE_GREEN_AND_PINK  ====================
@@ -448,9 +449,9 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #991199 #040410 #A3FF8C #000000 #991199
-  client.focused_inactive #000000 #040410 #999999 #000000 #000000
-  client.unfocused        #000000 #040410 #000000 #000000 #000000
+  client.focused          #119911 #040410 #A3FF8C #000000 #115511
+  client.focused_inactive #000000 #040410 #888888 #000000 #000000
+  client.unfocused        #000000 #040410 #888888 #000000 #000000
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000
 
@@ -462,7 +463,7 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 2 #14 (old configuration)
+gaps inner 2 #14 (default old configuration)
 gaps outer -2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.

@@ -1,3 +1,6 @@
+# SCRIPT WITH COMMANDS THAT I DO TO CONFIGURE Manjaro i3 from scratch
+# be careful: links can be old and etc. I do not recommended to execute this script! (likely it won't work somewhere)
+
 sudo pacman -Syu
 sudo pacman -S dkms chromium linux54-headers termite
 
@@ -34,7 +37,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/freespace/third_party/powerlevel10k
 echo "source ~/freespace/third_party/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 
-# pip3 install jedi # for coc.nvim python but it's better to do next line:
 # update coc-settings.json to use mpls
 
 sudo pacman -S bash-language-server
@@ -76,3 +78,6 @@ sudo pacman -S bash-language-server
 
 
 # change color of gaps - in i3 config
+
+# send notifications script for manjaro:
+# notify-send 'Notification from terminal' $1 --icon=dialog-information

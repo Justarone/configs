@@ -1,4 +1,6 @@
 #!/bin/bash
+# simple script to test program with black box tests
+# special project structure needed (this script used in 2020 in bmstu: computation algorithms, bmstu)
 TEST_NUMBER=$((`ls test/input -l | wc -l`-1))
 DESCRIPTIONS=test/descriptions/desc_
 OUTS=test/output/out_
