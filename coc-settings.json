@@ -1,14 +1,15 @@
 {
-  "html.enable": true,
-  "python.jediEnabled": false,
-  "languageserver": {
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
-    }
-  },
-  "python.linting.pylintEnabled": true,
-  "python.linting.enabled": true
+    "rust-analyzer.inlayHints.enable": false,
+    "coc.preferences.formatOnSaveFiletypes": ["rs"],
+    "html.enable": true,
+    "languageserver": {
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPaths": ["~"]
+        }
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }

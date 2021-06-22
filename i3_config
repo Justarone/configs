@@ -380,7 +380,7 @@ set_from_resource $term_color15    color15
 bar {
     i3bar_command i3bar
     status_command i3status
-    position bottom
+    position bottom # top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #    tray_output primary
@@ -393,54 +393,46 @@ bar {
 
     colors {
 # ================== PURPLE_WARRIOR_COLORS ========================
-        #background #261935
-        #statusline #FDECE4
-        #separator  #FFFFFF
-
-#                      border  backgr. text
-        #focused_workspace  #A5414B #FDECE4 #A5414B
-        #active_workspace   #595B5B #A5414B #FDECE4
-        #inactive_workspace #595B5B #A5414B #FDECE4
-        #binding_mode       #16a085 #2C2C2C #F9FAF9
-        #urgent_workspace   #16a085 #FDF6E3 #E5201D
+        #set $c1 #261935
+        #set $c2 #FDECE4
+        #set $c3 #FDECE4 
+        #set $c4 #A5414B
 # ================== PURPLE_WARRIOR_COLORS ========================
 # ==================  GREEN_TOURIST_COLORS ========================
-        #background #0F1E25
-        #statusline #C8E690
-        #separator  #FFFFFF
-
-#                      border  backgr. text
-        #focused_workspace  #14473E #C8E690 #14473E
-        #active_workspace   #595B5B #14473E #C8E690
-        #inactive_workspace #595B5B #14473E #C8E690
-        #binding_mode       #16a085 #2C2C2C #F9FAF9
-        #urgent_workspace   #16a085 #FDF6E3 #E5201D
+        #set $c1 #0F1E25
+        #set $c2 #C8E690
+        #set $c3 #0F1E25
+        #set $c4 #C8E690
 # ==================  GREEN_TOURIST_COLORS ========================
 # ==================    GREY_LINUX_COLORS  ========================
-        #background #222222
-        #statusline #DDDDDD
-        #separator  #FFFFFF
-
-#                      border  backgr. text
-        #focused_workspace  #000000 #FFFFFF #222222
-        #active_workspace   #FFFFFF #222222 #FFFFFF
-        #inactive_workspace #FFFFFF #222222 #FFFFFF
-        #binding_mode       #16a085 #2C2C2C #F9FAF9
-        #urgent_workspace   #16a085 #FDF6E3 #E5201D
+        #set $c1 #222222
+        #set $c2 #DDDDDD
+        #set $c3 #222222
+        #set $c4 #FFFFFF
 # ==================    GREY_LINUX_COLORS  ========================
 # ==================  DARKBLUE_GREEN_AND_PINK  ====================
-        background #040410
-# PINK: #FF22FF 
-        statusline #A3FF8C
-        separator  #A3FF8C
+        #set $c1 #040410
+        #set $c2 #A3FF8C
+        #set $c3 #040410
+        #set $c4 #A3FF8C
+# ==================  DARKBLUE_GREEN_AND_PINK  ====================
+# ==================  PURPLE_AND_PINK_GRADIENT ====================
+        set $c1 #1B0030
+        set $c2 #FFAFFF
+        set $c3 #1B0030
+        set $c4 #FFAFFF
+# ==================  PURPLE_AND_PINK_GRADIENT ====================
+
+        background $c1
+        statusline $c2
+        separator  $c2
 
 #                      border  backgr. text
-        focused_workspace  #040410 #A3FF8C #040410
-        active_workspace   #A3FF8C #040410 #A3FF8C
-        inactive_workspace #A3FF8C #040410 #A3FF8C
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-# ==================  DARKBLUE_GREEN_AND_PINK  ====================
+        focused_workspace  $c3 $c4 $c3
+        inactive_workspace $c4 $c3 $c4
+        active_workspace   $c4 $c3 $c4
+        binding_mode       $c4 $c3 $c4
+        urgent_workspace   #000000 #ffffff #000000
     }
 }
 
@@ -449,7 +441,7 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #119911 #040410 #A3FF8C #000000 #115511
+  client.focused          $c2 $c1 $c2 #000000 $c2
   client.focused_inactive #000000 #040410 #888888 #000000 #000000
   client.unfocused        #000000 #040410 #888888 #000000 #000000
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
@@ -463,8 +455,8 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 2 #14 (default old configuration)
-gaps outer -2
+gaps inner 10 #14 (default old configuration)
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -565,3 +557,5 @@ mode "mouse" {
 
 bindsym $mod2+m mode "mouse"
 
+
+# rofi -show window

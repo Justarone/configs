@@ -81,3 +81,10 @@ sudo pacman -S bash-language-server
 
 # send notifications script for manjaro:
 # notify-send 'Notification from terminal' $1 --icon=dialog-information
+
+
+
+# clean memory:
+# 1. pacman -Scc
+# 2. docker volume prune
+# 3. rm -rf ~/.local/share/vifm/Trash

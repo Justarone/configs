@@ -16,8 +16,10 @@ Plug 'tpope/vim-surround'
 "plugin for autoformat (default formatters can see on the Internet)
 "just type :Autoformat (works with tabs and spaces after function name)
 Plug 'Chiel92/vim-autoformat'
+"here we go again...
+Plug 'ryanoasis/vim-devicons'
 "plugin for markdown preview
-Plug 'iamcco/markdown-preview.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 "latex preview
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 "plugin for syntax highlighting
@@ -37,13 +39,25 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 "here is plugin with many different themes (can find on github)
 Plug 'rafi/awesome-vim-colorschemes'
-" css color show (activate: ColorHighlight)
+"css color show (activate: ColorHighlight)
 Plug 'chrisbra/Colorizer'
+"header/source plugin
+Plug 'vim-scripts/a.vim'
+"\di - start, \ds - stop
+Plug 'vim-scripts/DrawIt'
+"close all buffers except current
+Plug 'vim-scripts/BufOnly.vim'
+"start screen with MRU files
+"Plug 'mhinz/vim-startify'
+"ranger in vim
+"Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 call plug#end()
 
 "set cursorline
 set number
 set relativenumber
+set nofixendofline
 " change mode if I'm not focused on the win (realativenumber -> number)
 :augroup numbertoggle
 :  autocmd!
@@ -61,25 +75,27 @@ set shiftwidth=4
 syntax on
 
 "theme for tabs and panel
-let g:airline_theme='minimalist' "'tender', luna, deus
+let g:airline_theme='violet' "'tender', luna, deus, minimalist, bubblegum
 let g:airline#extensions#tabline#enabled = 1
 
 "theme for whole vim
-colorscheme onedark "deep-space, carbonized-dark, challenger-deep, dogrun, onedark
+colorscheme onedark "challenger_deep, dogrun, onedark, gruvbox, oceanic_material, space-vim-dark, hybrid
 set background=dark
 "resetting background must be after colorscheme configuration
 highlight Normal ctermbg=NONE
 
 if has('gui_running')
+    set guifont=Monaco\ 10
     set guioptions-=m
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
     highlight Normal guibg=#202020
+    colorscheme atom
 endif
 
 " files, defining roots of projects
-let g:rooter_patterns = ['.git', 'Makefile', "Cargo.toml"]
+let g:rooter_patterns = ['.git', 'Makefile', "Cargo.toml", "mix.exs"]
 
 let g:ctrlp_custom_ignore = 'node_modules\|target\|git'
 
@@ -91,7 +107,12 @@ set list
 set listchars=tab:>-
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+"use ranger instead of nerdtree
+"map <C-n> :RangerWorkingDirectory<CR>
+"replace default dir viewer with ranger
+"let g:ranger_replace_netrw = 1
 
 let g:airline_powerline_fonts = 1 "Включить поддержку Powerline шрифтов
 
@@ -100,9 +121,15 @@ nnoremap <C-k> :m .-2<CR>
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+au BufWrite *.rs :Autoformat
+
+let g:sql_type_default = 'pgsql'
+
 "CONFIGURATION FOR COC
 
-let g:coc_global_extensions = ['coc-clangd', 'coc-snippets', 'coc-emmet', 'coc-json', 'coc-python', 'coc-highlight', 'coc-html', 'coc-css', 'coc-texlab', 'coc-tsserver', 'coc-rls']
+let g:coc_global_extensions = ['coc-clangd', 'coc-snippets', 'coc-emmet', 'coc-json', 'coc-pyright', 'coc-highlight', 'coc-html', 'coc-css', 'coc-texlab', 'coc-tsserver', 'coc-rust-analyzer', 'coc-elixir'] "coc-rls, coc-rust-analyzer
 "coc.preferences.jumpCommand": "drop"
 
 " if hidden is not set, TextEdit might fail.

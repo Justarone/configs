@@ -8,8 +8,9 @@
 #dynamic_title = true
 #font = TerminessTTFNerdFontMono 12
 #font = PT Mono 10
-font = Monospace 10
-#font = Monaco 10 
+#font = Monospace 10
+font = Monaco 10 
+#font = ComicMono 11.5
 # vscode font 
 #font = Droid sans Mono 10 
 
@@ -53,7 +54,7 @@ size_hints = false
 cursor = #dcdccc
 cursor_foreground = #261936
 
-foreground = #dcdccc
+foreground = #ccccff
 foreground_bold = #ffffff
 #background = #3f3f3f
 
@@ -64,8 +65,11 @@ foreground_bold = #ffffff
 #background = rgba(15, 30, 37, 0.85) ======> green_tourist
 #background = rgba(38, 25, 54, 0.95) ======> purple_warrior
 #background = rgba(24, 23, 32, 0.97) ======> darkblue_green_and_pink
-#background = rgba(15, 15, 15, 1)
-background = rgba(34, 36, 51, 1)
+#background = rgba(34, 36, 51, 1) ==> dark blue
+#background = rgba(27, 0, 48, 0.96) ==> gradient
+#background = rgba(15, 15, 15, 1) 
+
+background = rgba(20, 10, 20, 1)
 
 # If unset, will reverse foreground and background
 #highlight = #2f2f2f
